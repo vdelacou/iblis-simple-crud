@@ -1,0 +1,12 @@
+import { FunctionComponent } from 'react';
+export declare const Simple: FunctionComponent;
+export declare const WithLoading: FunctionComponent;
+export declare const ChangeLanguage: FunctionComponent;
+export declare const NotEdit: FunctionComponent;
+export declare const NotDelete: FunctionComponent;
+export declare const NoMenu: FunctionComponent;
+export declare const WithLeftComponent: FunctionComponent;
+export declare const ChangeHeight: FunctionComponent;
+export declare const CustomMenu: FunctionComponent;
+export declare const OnlyCustomMenu: FunctionComponent;
+export declare const ValidateEmail: FunctionComponent;

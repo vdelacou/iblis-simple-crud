@@ -1,0 +1,41 @@
+import { Meta, Props } from '@storybook/addon-docs/blocks';
+import { EditForm } from '../../../src';
+import { EditFormValueProps, MenuActionProps } from './props';
+
+<Meta title="Components|Edit Form/Props" />
+
+# EditForm
+
+A component for update or delete an entity
+
+If no edit or delete button asked, then the menu is not displayed
+
+## Basic Usage
+
+```jsx
+import React, { FunctionComponent } from 'react';
+import { EditForm, IEditFormValue } from 'iblis-simple-crud';
+
+const BasicUsage: FunctionComponent = () => {
+  const initValue = { id: 1, value: 'Test' };
+  const editAction = (form: IEditFormValue) => {
+    // do what you need with the form.id and form.value
+  };
+  const deleteAction = (id: string | number) => {
+    // do what you need with the id
+  };
+  return <EditForm initValue={initValue} editAction={editAction} deleteAction={deleteAction} />;
+};
+```
+
+## Properties
+
+<Props of={EditForm} />
+
+### IEditFormValue
+
+<Props of={EditFormValueProps} />
+
+### IMenuAction
+
+<Props of={MenuActionProps} />

@@ -1,0 +1,31 @@
+import { Meta, Props } from '@storybook/addon-docs/blocks';
+import { AddForm } from '../../../src';
+import { AddFormValueProps } from './props';
+
+<Meta title="Components|Add Form/Props" />
+
+# AddForm
+
+Simple form with only one value to add
+
+## Basic Usage
+
+```jsx
+import React, { FunctionComponent } from 'react';
+import { AddForm, IAddFormValue } from 'iblis-simple-crud';
+
+const BasicUsage: FunctionComponent = () => {
+  const addAction = (form: IAddFormValue) => {
+    // do what you need with the form.value
+  };
+  return <AddForm addAction={addAction} />;
+};
+```
+
+## Properties
+
+<Props of={AddForm} />
+
+### IAddFormValue
+
+<Props of={AddFormValueProps} />

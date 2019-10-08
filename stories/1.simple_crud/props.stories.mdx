@@ -1,0 +1,81 @@
+import { Meta, Props } from '@storybook/addon-docs/blocks';
+import { SimpleCrud } from '../../src';
+import {
+  EditFormProps,
+  AddFormProps,
+  AddFormValueProps,
+  EditFormValueProps,
+  MenuActionProps,
+  SimpleCrudEntityProps,
+} from './props';
+
+<Meta title="Iblis Simple Crud|Props" />
+
+# SimpleCrud
+
+A component with full management of an entity list (add, edit, delete).
+
+## Basic Usage
+
+```jsx
+import React, { FunctionComponent } from 'react';
+import { AddForm, IAddFormValue } from 'iblis-simple-crud';
+
+interface IMyPokemon {
+  idPokemon: number;
+  pokemonName: string;
+}
+
+const BasicUsage: FunctionComponent = () => {
+  const data = [{ entity: { idPokemon: 1, pokemonName: 'Pikachu' } }];
+
+  const addAction = (form: IAddFormValue) => {
+    // do what you need with the form.value and change data properties if needed
+  };
+  const editAction = (value: IMyPokemon) => {
+    // do what you need with your object (displayFieldName has been updated ) and change data properties if needed
+  };
+  const deleteAction = (id: string | number) => {
+    // do what you need with the id and change data properties if needed
+  };
+
+  return (
+    <SimpleCrud
+      data={data}
+      idFieldName="idPokemon"
+      displayFieldName="pokemonName"
+      addAction={addAction}
+      editAction={editAction}
+      deleteAction={deleteAction}
+    />
+  );
+};
+```
+
+## Properties
+
+<Props of={SimpleCrud} />
+
+### ISimpleCrudEntityProps
+
+<Props of={SimpleCrudEntityProps} />
+
+### EditFormProps
+
+<Props of={EditFormProps} />
+
+### IEditFormValue
+
+<Props of={EditFormValueProps} />
+
+### IMenuAction
+
+<Props of={MenuActionProps} />
+
+### AddFormProps
+
+<Props of={AddFormProps} />
+
+### IAddFormValue
+
+<Props of={AddFormValueProps} />
