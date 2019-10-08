@@ -4,7 +4,7 @@ _**Beautiful React UI component built with Material-UI to manage (create, update
 
 [![NPM version](https://badge.fury.io/js/iblis-simple-crud.svg)](https://www.npmjs.com/package/iblis-simple-crud)
 
-<!-- ![Example](./screenshots/example.png) -->
+![Example](./screenshots/iblis-simple-crud.gif)
 
 ## Demos
 
@@ -48,7 +48,7 @@ You can launch test by running `npm run test`
 
 ## Dev
 
-To launch dev environement with storybook `npm run start` 
+To launch dev environement with storybook `npm run start`
 
 Then you will be able to see your components and test it on http://localhost:9010
 
