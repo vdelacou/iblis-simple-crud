@@ -48,7 +48,10 @@ You can launch test by running `npm run test`
 
 ## Dev
 
-To launch dev environement with storybook `npm run test` then you will be able to see your components and test it on http://localhost:9010
+To launch dev environement with storybook `npm run start` 
+
+Then you will be able to see your components and test it on http://localhost:9010
+
 All the documention and test are done in the `stories` folder
 
 ## Contribute
