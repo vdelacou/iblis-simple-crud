@@ -11,7 +11,7 @@ module.exports = [
     name: '@storybook/preset-typescript',
     options: {
       tsDocgenLoaderOptions: {
-        tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
+        tsconfigPath: path.resolve(__dirname, '../tsconfig.storybook.json'),
       },
       include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, '../stories')],
     },
