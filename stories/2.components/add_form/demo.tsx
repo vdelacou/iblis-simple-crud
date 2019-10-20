@@ -74,3 +74,17 @@ export const ValidateEmail: FunctionComponent = () => {
     />
   );
 };
+
+export const WithDefaultValue: FunctionComponent = () => {
+  const [loading, setLoading] = useState(false);
+
+  const addAction = (form: IAddFormValue) => {
+    // tslint:disable-next-line: no-console
+    console.log(JSON.stringify(form));
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  };
+  return <AddForm isLoading={loading} addAction={addAction} defaultValue={'Celestra'} />;
+};

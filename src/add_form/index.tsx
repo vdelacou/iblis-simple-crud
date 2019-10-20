@@ -6,12 +6,6 @@ import React, { FunctionComponent, useEffect } from 'react';
  * Simple form with only one value to add
  */
 export const AddForm: FunctionComponent<IAddFormProps> = props => {
-  useEffect(() => {
-    if (!props.isLoading) {
-      resetForm();
-    }
-  }, [props.isLoading]);
-
   const submitForm = (form: IAddFormValue) => {
     props.addAction(form);
   };
@@ -30,12 +24,18 @@ export const AddForm: FunctionComponent<IAddFormProps> = props => {
   };
 
   const { getFieldProps, handleSubmit, resetForm, isSubmitting } = useFormik<IAddFormValue>({
-    initialValues: { value: '' },
+    initialValues: { value: props.defaultValue ? props.defaultValue : '' },
     validate: validateForm,
     onSubmit: (form: IAddFormValue) => {
       submitForm(form);
     },
   });
+
+  useEffect(() => {
+    if (!props.isLoading) {
+      resetForm();
+    }
+  }, [props.isLoading, resetForm]);
 
   const [entityName, entityNameMetadata] = getFieldProps({
     name: 'value',
@@ -91,6 +91,10 @@ export interface IAddFormProps {
    * The placeholder label for the entityName field
    */
   placeholderAdd?: string;
+  /**
+   * The value to show on text field
+   */
+  defaultValue?: string;
   /**
    * To show to user that the action is loading (default false)
    * @default false

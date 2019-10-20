@@ -29,12 +29,6 @@ export const EditForm: FunctionComponent<IEditFormProps> = props => {
   //  When we display the button to confirm delete
   const [deleteItem, setDeleteItem] = useState(false);
 
-  useEffect(() => {
-    if (!props.isLoading && deleteItem) {
-      resetForm();
-    }
-  }, [props.isLoading, deleteItem]);
-
   const submitForm = (form: IEditFormValue) => {
     props.editAction(form);
     setEditItem(false);
@@ -60,6 +54,12 @@ export const EditForm: FunctionComponent<IEditFormProps> = props => {
       submitForm(form);
     },
   });
+
+  useEffect(() => {
+    if (!props.isLoading && deleteItem) {
+      resetForm();
+    }
+  }, [props.isLoading, deleteItem, resetForm]);
 
   const [entityName, entityNameMetadata] = getFieldProps({
     name: 'value',
