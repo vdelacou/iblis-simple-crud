@@ -38,7 +38,7 @@ All props and documented example can be found in the storybook
 
 Install the library and the dependencies to your React project
 
-`npm install iblis-simple-crud @material-ui/core @material-ui/icons @material-ui/styles formik@next`
+`npm install iblis-simple-crud @material-ui/core @material-ui/icons formik@next`
 
 ## Test
 

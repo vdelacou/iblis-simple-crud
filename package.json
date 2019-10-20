@@ -1,6 +1,6 @@
 {
   "name": "iblis-simple-crud",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "Apache-2.0",
   "author": "DELACOURT Vincent <vincent.delacourt@gmail.com>",
   "description": "Beautiful React UI component built with Material-UI to manage (create, update and delete) a simple object list",
@@ -29,13 +29,12 @@
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom",
     "lint": "tsdx lint",
-    "storybook": "start-storybook -p 9010  --docs",
+    "storybook": "start-storybook -p 9010 --docs",
     "build-storybook": "build-storybook --docs -o ./docs"
   },
   "peerDependencies": {
-    "@material-ui/core": ">=4.0",
-    "@material-ui/icons": ">=4.0",
-    "@material-ui/styles": ">=4.0",
+    "@material-ui/core": ">=4.5",
+    "@material-ui/icons": ">=4.5",
     "formik": ">=2.0",
     "react": ">=16.8",
     "react-dom": ">=16.8"
@@ -54,7 +53,6 @@
   "devDependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",
-    "@material-ui/styles": "latest",
     "@storybook/addon-docs": "latest",
     "@storybook/addons": "latest",
     "@storybook/preset-typescript": "latest",
@@ -79,6 +77,10 @@
     "tslint-etc": "latest",
     "tslint-react": "latest",
     "tslint-react-hooks": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "babel-eslint": "latest",
+    "eslint": "latest",
     "typescript": "latest"
   }
 }

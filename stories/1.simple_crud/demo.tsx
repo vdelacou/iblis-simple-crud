@@ -1,7 +1,7 @@
 import { Box, createMuiTheme } from '@material-ui/core';
 import { darken } from '@material-ui/core/styles';
+import ThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { FlashOff, FlashOn } from '@material-ui/icons';
-import { ThemeProvider } from '@material-ui/styles';
 import React, { FunctionComponent, useState } from 'react';
 import { IAddFormValue, IEditFormValue, IMenuAction, ISimpleCrudEntityProps, SimpleCrud } from '../../src';
 
