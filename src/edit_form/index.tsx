@@ -355,15 +355,15 @@ export interface IEditFormProps {
   /**
    * Label to show as error if validation function is not satisfied when edit, if no error must return undefined, if error return the error description
    */
-  validateFunction?(form: IEditFormValue): string | undefined;
+  validateFunction?: (form: IEditFormValue) => string | undefined;
   /**
    * The Function to call when click on edit button
    */
-  editAction(form: IEditFormValue): void;
+  editAction: (form: IEditFormValue) => void;
   /**
    * The Function to call when click on delete button
    */
-  deleteAction(id: string | number): void;
+  deleteAction: (id: string | number) => void;
 }
 
 EditForm.defaultProps = {

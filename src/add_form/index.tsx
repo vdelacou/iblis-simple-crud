@@ -103,11 +103,11 @@ export interface IAddFormProps {
   /**
    * Label to show as error if validation function is not satisfied, if no error must return undefined, if error return the error description
    */
-  validateFunction?(form: IAddFormValue): string | undefined;
+  validateFunction?: (form: IAddFormValue) => string | undefined;
   /**
    * The Function to call when click on button
    */
-  addAction(form: IAddFormValue): void;
+  addAction: (form: IAddFormValue) => void;
 }
 
 AddForm.defaultProps = {
