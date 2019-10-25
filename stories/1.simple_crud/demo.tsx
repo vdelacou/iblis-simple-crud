@@ -76,11 +76,7 @@ export const ReOrder: FunctionComponent = () => {
     name: string;
     index: number;
   }
-  const initData: IReOrder[] = [
-    { id: 1, name: 'Celestra', index: 2 },
-    { id: 2, name: 'Cybele', index: 1 },
-    { id: 3, name: 'Demetrius', index: 3 },
-  ];
+  const initData: IReOrder[] = [{ id: 1, name: 'Celestra', index: 2 }, { id: 2, name: 'Cybele', index: 1 }, { id: 3, name: 'Demetrius', index: 3 }];
 
   const upAction = (id: string | number) => {
     setLoading(true);
@@ -224,10 +220,7 @@ export const OnOff: FunctionComponent = () => {
   const getEditFormProps = (itemList: IOnOff[]): Array<ISimpleCrudEntityProps<IOnOff>> => {
     return itemList.map(item => {
       if (item.active) {
-        const menuAction: IMenuAction[] = [
-          { label: 'On', action: toogleAction, disabled: true },
-          { label: 'Off', action: toogleAction },
-        ];
+        const menuAction: IMenuAction[] = [{ label: 'On', action: toogleAction, disabled: true }, { label: 'Off', action: toogleAction }];
         return {
           entity: item,
           editFormProps: {
@@ -241,10 +234,7 @@ export const OnOff: FunctionComponent = () => {
           },
         };
       } else {
-        const menuAction: IMenuAction[] = [
-          { label: 'On', action: toogleAction },
-          { label: 'Off', action: toogleAction, disabled: true },
-        ];
+        const menuAction: IMenuAction[] = [{ label: 'On', action: toogleAction }, { label: 'Off', action: toogleAction, disabled: true }];
         return {
           entity: item,
           editFormProps: {

@@ -1,20 +1,11 @@
 import { FunctionComponent } from 'react';
-import {
-  IAddFormProps,
-  IAddFormValue,
-  IEditFormProps,
-  IEditFormValue,
-  IMenuAction,
-  ISimpleCrudEntityProps,
-} from '../../src';
+import { IAddFormProps, IAddFormValue, IEditFormProps, IEditFormValue, IMenuAction, ISimpleCrudEntityProps } from '../../src';
 
 export const SimpleCrudEntityProps: FunctionComponent<ISimpleCrudEntityProps<object>> = () => {
   return null;
 };
 
-export const EditFormProps: FunctionComponent<
-  Omit<IEditFormProps, 'editAction' | 'deleteAction' | 'isLoading'>
-> = () => {
+export const EditFormProps: FunctionComponent<Omit<IEditFormProps, 'editAction' | 'deleteAction' | 'isLoading'>> = () => {
   return null;
 };
 

@@ -42,18 +42,14 @@ export const Required: FunctionComponent = () => {
       setLoading(false);
     }, 2000);
   };
-  return (
-    <AddForm isLoading={loading} placeholderAdd="Name" validateFunction={validateFunction} addAction={addAction} />
-  );
+  return <AddForm isLoading={loading} placeholderAdd="Name" validateFunction={validateFunction} addAction={addAction} />;
 };
 
 export const ValidateEmail: FunctionComponent = () => {
   const [loading, setLoading] = useState(false);
 
   const validateFunction = (form: IAddFormValue) => {
-    return form.value && form.value.trim() !== '' && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(form.value)
-      ? undefined
-      : 'Email not valid';
+    return form.value && form.value.trim() !== '' && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(form.value) ? undefined : 'Email not valid';
   };
 
   const addAction = (form: IAddFormValue) => {
@@ -64,15 +60,7 @@ export const ValidateEmail: FunctionComponent = () => {
       setLoading(false);
     }, 2000);
   };
-  return (
-    <AddForm
-      isLoading={loading}
-      placeholderAdd="New Member Email"
-      buttonLabelAdd="Invite"
-      validateFunction={validateFunction}
-      addAction={addAction}
-    />
-  );
+  return <AddForm isLoading={loading} placeholderAdd="New Member Email" buttonLabelAdd="Invite" validateFunction={validateFunction} addAction={addAction} />;
 };
 
 export const WithDefaultValue: FunctionComponent = () => {

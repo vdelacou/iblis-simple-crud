@@ -54,6 +54,7 @@ export const SimpleCrud: FunctionComponent<ISimpleCrudProps> = props => {
               hasEdit={propsData.editFormProps && propsData.editFormProps.hasEdit}
               hasDelete={propsData.editFormProps && propsData.editFormProps.hasDelete}
               leftComponent={propsData.editFormProps && propsData.editFormProps.leftComponent}
+              rightComponent={propsData.editFormProps && propsData.editFormProps.rightComponent}
               menuAction={propsData.editFormProps && propsData.editFormProps.menuAction}
               componentHeight={propsData.editFormProps && propsData.editFormProps.componentHeight}
             />
@@ -123,15 +124,15 @@ export interface ISimpleCrudProps {
   /**
    * The Function to call when click on add button
    */
-  addAction(form: IAddFormValue): void;
+  addAction: (form: IAddFormValue) => void;
   /**
    * The Function to call when click on edit button on item
    */
-  editAction(value: object): void;
+  editAction: (value: any) => void;
   /**
    * The Function to call when click on delete button on item
    */
-  deleteAction(id: string | number): void;
+  deleteAction: (id: string | number) => void;
 }
 
 function readObjectProp(obj: object, key: string) {

@@ -1,13 +1,6 @@
 import { Meta, Props } from '@storybook/addon-docs/blocks';
 import { SimpleCrud } from '../../src';
-import {
-  EditFormProps,
-  AddFormProps,
-  AddFormValueProps,
-  EditFormValueProps,
-  MenuActionProps,
-  SimpleCrudEntityProps,
-} from './props';
+import { EditFormProps, AddFormProps, AddFormValueProps, EditFormValueProps, MenuActionProps, SimpleCrudEntityProps } from './props';
 
 <Meta title="Iblis Simple Crud|Props" />
 
@@ -39,16 +32,7 @@ const BasicUsage: FunctionComponent = () => {
     // do what you need with the id and change data properties if needed
   };
 
-  return (
-    <SimpleCrud
-      data={data}
-      idFieldName="idPokemon"
-      displayFieldName="pokemonName"
-      addAction={addAction}
-      editAction={editAction}
-      deleteAction={deleteAction}
-    />
-  );
+  return <SimpleCrud data={data} idFieldName="idPokemon" displayFieldName="pokemonName" addAction={addAction} editAction={editAction} deleteAction={deleteAction} />;
 };
 ```
 

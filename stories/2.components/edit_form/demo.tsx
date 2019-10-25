@@ -1,3 +1,4 @@
+import { Box, Typography } from '@material-ui/core';
 import React, { FunctionComponent, useState } from 'react';
 import { EditForm, IEditFormValue } from '../../../src';
 
@@ -29,15 +30,7 @@ export const Simple: FunctionComponent = () => {
     }, 2000);
   };
 
-  return (
-    <EditForm
-      isLoading={loading}
-      initValue={dataValue}
-      validateFunction={validateFunction}
-      editAction={editAction}
-      deleteAction={deleteAction}
-    />
-  );
+  return <EditForm isLoading={loading} initValue={dataValue} validateFunction={validateFunction} editAction={editAction} deleteAction={deleteAction} />;
 };
 
 export const WithLoading: FunctionComponent = () => {
@@ -113,15 +106,7 @@ export const NoMenu: FunctionComponent = () => {
   const deleteAction = () => {
     // do what you need with the id
   };
-  return (
-    <EditForm
-      initValue={initValue}
-      editAction={editAction}
-      deleteAction={deleteAction}
-      hasEdit={false}
-      hasDelete={false}
-    />
-  );
+  return <EditForm initValue={initValue} editAction={editAction} deleteAction={deleteAction} hasEdit={false} hasDelete={false} />;
 };
 
 export const WithLeftComponent: FunctionComponent = () => {
@@ -137,8 +122,28 @@ export const WithLeftComponent: FunctionComponent = () => {
       initValue={initValue}
       editAction={editAction}
       deleteAction={deleteAction}
-      leftComponent={
-        <img src="https://image.freepik.com/free-photo/cute-cat-picture_1122-449.jpg" style={{ maxHeight: '100%' }} />
+      leftComponent={<img src="https://image.freepik.com/free-photo/cute-cat-picture_1122-449.jpg" style={{ maxHeight: '100%' }} />}
+    />
+  );
+};
+
+export const WithRightComponent: FunctionComponent = () => {
+  const initValue = { id: 1, value: 'Test' };
+  const editAction = () => {
+    // do what you need with the form.id and form.value
+  };
+  const deleteAction = () => {
+    // do what you need with the id
+  };
+  return (
+    <EditForm
+      initValue={initValue}
+      editAction={editAction}
+      deleteAction={deleteAction}
+      rightComponent={
+        <Box width={'100%'} display={'flex'} justifyContent={'center'}>
+          <Typography variant={'caption'}>Active</Typography>
+        </Box>
       }
     />
   );
@@ -167,10 +172,7 @@ export const CustomMenu: FunctionComponent = () => {
     // do what you need with the id
     setDisabled(!disabled);
   };
-  const menuAction = [
-    { label: 'Enabled', action: enabledAction, disabled: !disabled },
-    { label: 'Disabled', action: disabledAction, disabled },
-  ];
+  const menuAction = [{ label: 'Enabled', action: enabledAction, disabled: !disabled }, { label: 'Disabled', action: disabledAction, disabled }];
 
   const editAction = () => {
     // do what you need with the form.id and form.value
@@ -197,10 +199,7 @@ export const OnlyCustomMenu: FunctionComponent = () => {
       setDisabled(!disabled);
     }, 1000);
   };
-  const menuAction = [
-    { label: 'Enabled', action: enabledAction, disabled: !disabled },
-    { label: 'Disabled', action: disabledAction, disabled },
-  ];
+  const menuAction = [{ label: 'Enabled', action: enabledAction, disabled: !disabled }, { label: 'Disabled', action: disabledAction, disabled }];
 
   const editAction = () => {
     // do what you need with the form.id and form.value
@@ -208,25 +207,14 @@ export const OnlyCustomMenu: FunctionComponent = () => {
   const deleteAction = () => {
     // do what you need with the id
   };
-  return (
-    <EditForm
-      initValue={initValue}
-      editAction={editAction}
-      deleteAction={deleteAction}
-      hasEdit={false}
-      hasDelete={false}
-      menuAction={menuAction}
-    />
-  );
+  return <EditForm initValue={initValue} editAction={editAction} deleteAction={deleteAction} hasEdit={false} hasDelete={false} menuAction={menuAction} />;
 };
 
 export const ValidateEmail: FunctionComponent = () => {
   const initValue = { id: 1, value: 'john.doe@company.com' };
 
   const validateFunction = (form: IEditFormValue) => {
-    return form.value && form.value.trim() !== '' && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(form.value)
-      ? undefined
-      : 'Email not valid';
+    return form.value && form.value.trim() !== '' && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(form.value) ? undefined : 'Email not valid';
   };
 
   const editAction = () => {
@@ -235,12 +223,5 @@ export const ValidateEmail: FunctionComponent = () => {
   const deleteAction = () => {
     // do what you need with the id
   };
-  return (
-    <EditForm
-      initValue={initValue}
-      editAction={editAction}
-      deleteAction={deleteAction}
-      validateFunction={validateFunction}
-    />
-  );
+  return <EditForm initValue={initValue} editAction={editAction} deleteAction={deleteAction} validateFunction={validateFunction} />;
 };

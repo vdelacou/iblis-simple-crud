@@ -20,16 +20,7 @@ export const BasicUsage: FunctionComponent = () => {
     // do what you need with the id and change data properties if needed
   };
 
-  return (
-    <SimpleCrud
-      data={data}
-      idFieldName="idPokemon"
-      displayFieldName="pokemonName"
-      addAction={addAction}
-      editAction={editAction}
-      deleteAction={deleteAction}
-    />
-  );
+  return <SimpleCrud data={data} idFieldName="idPokemon" displayFieldName="pokemonName" addAction={addAction} editAction={editAction} deleteAction={deleteAction} />;
 };
 
 describe('it', () => {

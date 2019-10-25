@@ -1,16 +1,4 @@
-import {
-  Box,
-  FormHelperText,
-  Grid,
-  IconButton,
-  makeStyles,
-  Menu,
-  MenuItem,
-  TextField,
-  Theme,
-  Tooltip,
-  Typography,
-} from '@material-ui/core';
+import { Box, FormHelperText, Grid, IconButton, makeStyles, Menu, MenuItem, TextField, Theme, Tooltip, Typography } from '@material-ui/core';
 import { Cancel, DeleteForever, Done, MoreVert } from '@material-ui/icons';
 import { FormikErrors, useFormik } from 'formik';
 import React, { Fragment, FunctionComponent, useEffect, useState } from 'react';
@@ -71,13 +59,7 @@ export const EditForm: FunctionComponent<IEditFormProps> = props => {
       setElement(null);
     };
     return (
-      <Menu
-        elevation={1}
-        anchorEl={element}
-        open={Boolean(element)}
-        disableEnforceFocus={true}
-        onClose={setElementNull}
-      >
+      <Menu elevation={1} anchorEl={element} open={Boolean(element)} disableEnforceFocus={true} onClose={setElementNull}>
         {renderEditMenuItem()}
         {renderDeleteMenuItem()}
         {renderOptionalMenuItem()}
@@ -158,17 +140,19 @@ export const EditForm: FunctionComponent<IEditFormProps> = props => {
       );
     } else {
       return (
-        <TextField
-          disabled={isSubmitting || props.isLoading}
-          error={entityNameMetadata.error !== undefined}
-          helperText={entityNameMetadata.error ? entityNameMetadata.error : ' '}
-          autoFocus={true}
-          fullWidth={true}
-          InputProps={{
-            classes: { input: classes.TextFieldRoot },
-          }}
-          {...entityName}
-        />
+        <Box width={'100%'}>
+          <TextField
+            disabled={isSubmitting || props.isLoading}
+            error={entityNameMetadata.error !== undefined}
+            helperText={entityNameMetadata.error ? entityNameMetadata.error : ' '}
+            autoFocus={true}
+            fullWidth={true}
+            InputProps={{
+              classes: { input: classes.TextFieldRoot },
+            }}
+            {...entityName}
+          />
+        </Box>
       );
     }
   };
@@ -235,6 +219,38 @@ export const EditForm: FunctionComponent<IEditFormProps> = props => {
     return null;
   };
 
+  const renderLeftComponent = () => {
+    if (props.leftComponent) {
+      return (
+        <Box height={props.componentHeight} pr={props.leftComponent ? 2 : 0}>
+          <Box display="flex" flexDirection="column" justifyContent="space-between" height={'100%'}>
+            <Box display="flex" alignItems="center" height={'100%'}>
+              {props.leftComponent}
+            </Box>
+            {props.leftComponent && <FormHelperText>&nbsp;</FormHelperText>}
+          </Box>
+        </Box>
+      );
+    }
+    return null;
+  };
+
+  const renderRightComponent = () => {
+    if (props.rightComponent && !editItem) {
+      return (
+        <Box height={props.componentHeight} pl={props.rightComponent ? 2 : 0} width={'100%'}>
+          <Box display="flex" flexDirection="column" justifyContent="space-between" height={'100%'}>
+            <Box display="flex" alignItems="center" height={'100%'}>
+              {props.rightComponent}
+            </Box>
+            {props.rightComponent && <FormHelperText>&nbsp;</FormHelperText>}
+          </Box>
+        </Box>
+      );
+    }
+    return null;
+  };
+
   return (
     <Fragment>
       <form onSubmit={handleSubmit} noValidate={true}>
@@ -243,15 +259,9 @@ export const EditForm: FunctionComponent<IEditFormProps> = props => {
             <Grid container={true} alignItems="center">
               <Grid item={true} xs={8} sm={10}>
                 <Box display={'flex'} flexDirection="row" alignItems="center">
-                  <Box height={props.componentHeight} pr={props.leftComponent ? 2 : 0}>
-                    <Box display="flex" flexDirection="column" justifyContent="space-between" height={'100%'}>
-                      <Box display="flex" alignItems="center" height={'100%'}>
-                        {props.leftComponent}
-                      </Box>
-                      {props.leftComponent && <FormHelperText>&nbsp;</FormHelperText>}
-                    </Box>
-                  </Box>
-                  <Box width={'100%'}>{renderValue()}</Box>
+                  {renderLeftComponent()}
+                  {renderValue()}
+                  {renderRightComponent()}
                 </Box>
               </Grid>
               <Grid item={true} xs={4} sm={2}>
@@ -343,6 +353,10 @@ export interface IEditFormProps {
    * A component to display if needed at the left of the form
    */
   leftComponent?: React.ReactNode;
+  /**
+   * A component to display if needed at the right of the form, disapear on edit mode
+   */
+  rightComponent?: React.ReactNode;
   /**
    * The height of the component
    * @default 60
