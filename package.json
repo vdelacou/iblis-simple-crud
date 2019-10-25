@@ -35,7 +35,7 @@
   "peerDependencies": {
     "@material-ui/core": ">=4.5",
     "@material-ui/icons": ">=4.5",
-    "formik": ">=2.0",
+    "formik": ">=2",
     "react": ">=16.8",
     "react-dom": ">=16.8"
   },
