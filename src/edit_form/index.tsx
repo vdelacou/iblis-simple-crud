@@ -236,7 +236,7 @@ export const EditForm: FunctionComponent<IEditFormProps> = props => {
   };
 
   const renderRightComponent = () => {
-    if (props.rightComponent && !editItem) {
+    if (props.rightComponent && !editItem && !deleteItem) {
       return (
         <Box height={props.componentHeight} pl={props.rightComponent ? 2 : 0} width={'100%'}>
           <Box display="flex" flexDirection="column" justifyContent="space-between" height={'100%'}>
@@ -354,7 +354,7 @@ export interface IEditFormProps {
    */
   leftComponent?: React.ReactNode;
   /**
-   * A component to display if needed at the right of the form, disapear on edit mode
+   * A component to display if needed at the right of the form, disapear on edit or delete mode
    */
   rightComponent?: React.ReactNode;
   /**

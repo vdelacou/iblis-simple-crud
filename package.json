@@ -1,6 +1,6 @@
 {
   "name": "iblis-simple-crud",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "Apache-2.0",
   "author": "DELACOURT Vincent <vincent.delacourt@gmail.com>",
   "description": "Beautiful React UI component built with Material-UI to manage (create, update and delete) a simple object list",
