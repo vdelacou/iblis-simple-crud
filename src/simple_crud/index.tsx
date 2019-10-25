@@ -57,6 +57,11 @@ export const SimpleCrud: FunctionComponent<ISimpleCrudProps> = props => {
               rightComponent={propsData.editFormProps && propsData.editFormProps.rightComponent}
               menuAction={propsData.editFormProps && propsData.editFormProps.menuAction}
               componentHeight={propsData.editFormProps && propsData.editFormProps.componentHeight}
+              confirmDeleteLabel={propsData.editFormProps && propsData.editFormProps.confirmDeleteLabel}
+              deleteConfirmLabel={propsData.editFormProps && propsData.editFormProps.deleteConfirmLabel}
+              deleteCancelLabel={propsData.editFormProps && propsData.editFormProps.deleteCancelLabel}
+              editCancelLabel={propsData.editFormProps && propsData.editFormProps.editCancelLabel}
+              editConfirmLabel={propsData.editFormProps && propsData.editFormProps.editConfirmLabel}
             />
           </Box>
         </ListItem>
