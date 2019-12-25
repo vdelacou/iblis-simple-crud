@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.js": "/vdelacou/iblis-simple-crud/main.c5951bd1b1503fbda226.bundle.js",
+    "main.js.map": "/vdelacou/iblis-simple-crud/main.c5951bd1b1503fbda226.bundle.js.map",
+    "runtime~main.js": "/vdelacou/iblis-simple-crud/runtime~main.c5951bd1b1503fbda226.bundle.js",
+    "runtime~main.js.map": "/vdelacou/iblis-simple-crud/runtime~main.c5951bd1b1503fbda226.bundle.js.map",
+    "vendors~main.js": "/vdelacou/iblis-simple-crud/vendors~main.c5951bd1b1503fbda226.bundle.js",
+    "vendors~main.js.map": "/vdelacou/iblis-simple-crud/vendors~main.c5951bd1b1503fbda226.bundle.js.map",
+    "iframe.html": "/vdelacou/iblis-simple-crud/iframe.html",
+    "precache-manifest.0c2257a0babcdfed310e3ab56755e7a2.js": "/vdelacou/iblis-simple-crud/precache-manifest.0c2257a0babcdfed310e3ab56755e7a2.js",
+    "service-worker.js": "/vdelacou/iblis-simple-crud/service-worker.js"
+  },
+  "entrypoints": [
+    "runtime~main.c5951bd1b1503fbda226.bundle.js",
+    "vendors~main.c5951bd1b1503fbda226.bundle.js",
+    "main.c5951bd1b1503fbda226.bundle.js"
+  ]
+}

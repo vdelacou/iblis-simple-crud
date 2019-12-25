@@ -35,7 +35,7 @@ export const EditForm: FunctionComponent<IEditFormProps> = props => {
     });
   };
 
-  const { getFieldProps, handleSubmit, resetForm, isSubmitting } = useFormik<IEditFormValue>({
+  const { getFieldProps, getFieldMeta, handleSubmit, resetForm, isSubmitting } = useFormik<IEditFormValue>({
     initialValues: props.initValue,
     validate: validateForm,
     onSubmit: (form: IEditFormValue) => {
@@ -49,10 +49,8 @@ export const EditForm: FunctionComponent<IEditFormProps> = props => {
     }
   }, [props.isLoading, deleteItem, resetForm]);
 
-  const [entityName, entityNameMetadata] = getFieldProps({
-    name: 'value',
-    type: 'text',
-  });
+  const valueFieldProps = getFieldProps({ name: 'value', type: 'text' });
+  const valueFieldMeta = getFieldMeta('value');
 
   const renderMenu = () => {
     const setElementNull = () => {
@@ -143,14 +141,14 @@ export const EditForm: FunctionComponent<IEditFormProps> = props => {
         <Box width={'100%'}>
           <TextField
             disabled={isSubmitting || props.isLoading}
-            error={entityNameMetadata.error !== undefined}
-            helperText={entityNameMetadata.error ? entityNameMetadata.error : ' '}
+            error={valueFieldMeta.error !== undefined}
+            helperText={valueFieldMeta.error ? valueFieldMeta.error : ' '}
             autoFocus={true}
             fullWidth={true}
             InputProps={{
               classes: { input: classes.TextFieldRoot },
             }}
-            {...entityName}
+            {...valueFieldProps}
           />
         </Box>
       );

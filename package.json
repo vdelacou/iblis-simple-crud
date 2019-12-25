@@ -1,6 +1,6 @@
 {
   "name": "iblis-simple-crud",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "license": "Apache-2.0",
   "author": "DELACOURT Vincent <vincent.delacourt@gmail.com>",
   "description": "Beautiful React UI component built with Material-UI to manage (create, update and delete) a simple object list",
@@ -21,27 +21,24 @@
   "main": "dist/index.js",
   "module": "dist/iblis-simple-crud.esm.js",
   "typings": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build",
+    "build": "tsdx lint src test && tsdx build",
     "test": "tsdx test --env=jsdom",
-    "lint": "tsdx lint",
+    "lint": "tsdx lint src test",
     "storybook": "start-storybook -p 9010 --docs",
     "build-storybook": "build-storybook --docs -o ./docs"
   },
   "peerDependencies": {
-    "@material-ui/core": ">=4.5",
-    "@material-ui/icons": ">=4.5",
+    "@material-ui/core": ">=4.8",
+    "@material-ui/icons": ">=4.8",
     "formik": ">=2",
     "react": ">=16.8",
     "react-dom": ">=16.8"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint"
+      "pre-commit": "tsdx lint src test"
     }
   },
   "prettier": {
@@ -50,37 +47,42 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "devDependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",
     "@storybook/addon-docs": "latest",
     "@storybook/addons": "latest",
-    "@storybook/preset-typescript": "latest",
     "@storybook/react": "latest",
-    "@storybook/source-loader": "latest",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
     "@types/jest": "latest",
+    "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "awesome-typescript-loader": "latest",
-    "babel-loader": "latest",
-    "formik": "next",
+    "formik": "latest",
     "husky": "latest",
     "react": "latest",
     "react-docgen-typescript-loader": "latest",
     "react-dom": "latest",
-    "ts-loader": "latest",
+    "react-scripts": "latest",
     "tsdx": "latest",
-    "tslib": "latest",
-    "tslint": "latest",
-    "tslint-config-prettier": "latest",
-    "tslint-config-standard": "latest",
-    "tslint-etc": "latest",
-    "tslint-react": "latest",
-    "tslint-react-hooks": "latest",
-    "@typescript-eslint/eslint-plugin": "latest",
-    "@typescript-eslint/parser": "latest",
-    "babel-eslint": "latest",
-    "eslint": "latest",
     "typescript": "latest"
   }
 }

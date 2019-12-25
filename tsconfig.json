@@ -1,38 +1,19 @@
 {
-  "include": ["src"],
   "compilerOptions": {
     "target": "es5",
-    "module": "esNext",
-    "lib": ["dom", "esnext"],
-    "importHelpers": true,
-    "declaration": true,
-    "sourceMap": true,
-    "rootDirs": ["src"],
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "baseUrl": "./",
-    "paths": {
-      "*": ["src/*", "node_modules/*"]
-    },
-    "jsx": "react",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "allowUnreachableCode": false,
-    "downlevelIteration": true,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "pretty": true,
-    "suppressImplicitAnyIndexErrors": true,
+    "module": "esnext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
-    "outDir": "dist"
-  }
+    "isolatedModules": false,
+    "noEmit": true,
+    "jsx": "react"
+  },
+  "include": ["src", "test", "stories"]
 }

@@ -23,7 +23,7 @@ export const AddForm: FunctionComponent<IAddFormProps> = props => {
     });
   };
 
-  const { getFieldProps, handleSubmit, resetForm, isSubmitting } = useFormik<IAddFormValue>({
+  const { getFieldProps, getFieldMeta, handleSubmit, resetForm, isSubmitting } = useFormik<IAddFormValue>({
     initialValues: { value: props.defaultValue ? props.defaultValue : '' },
     validate: validateForm,
     onSubmit: (form: IAddFormValue) => {
@@ -37,10 +37,8 @@ export const AddForm: FunctionComponent<IAddFormProps> = props => {
     }
   }, [props.isLoading, resetForm]);
 
-  const [entityName, entityNameMetadata] = getFieldProps({
-    name: 'value',
-    type: 'text',
-  });
+  const valueFieldProps = getFieldProps({ name: 'value', type: 'text' });
+  const valueFieldMeta = getFieldMeta('value');
 
   return (
     <form onSubmit={handleSubmit} noValidate={true}>
@@ -51,10 +49,10 @@ export const AddForm: FunctionComponent<IAddFormProps> = props => {
             <TextField
               placeholder={props.placeholderAdd}
               disabled={isSubmitting || props.isLoading}
-              error={entityNameMetadata.error !== undefined && entityNameMetadata.touched}
-              helperText={entityNameMetadata.error && entityNameMetadata.touched ? entityNameMetadata.error : ' '}
+              error={valueFieldMeta.error !== undefined && valueFieldMeta.touched}
+              helperText={valueFieldMeta.error && valueFieldMeta.touched ? valueFieldMeta.error : ' '}
               fullWidth={true}
-              {...entityName}
+              {...valueFieldProps}
             />
           </Box>
         </Grid>

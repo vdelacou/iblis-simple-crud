@@ -172,7 +172,10 @@ export const CustomMenu: FunctionComponent = () => {
     // do what you need with the id
     setDisabled(!disabled);
   };
-  const menuAction = [{ label: 'Enabled', action: enabledAction, disabled: !disabled }, { label: 'Disabled', action: disabledAction, disabled }];
+  const menuAction = [
+    { label: 'Enabled', action: enabledAction, disabled: !disabled },
+    { label: 'Disabled', action: disabledAction, disabled },
+  ];
 
   const editAction = () => {
     // do what you need with the form.id and form.value
@@ -199,7 +202,10 @@ export const OnlyCustomMenu: FunctionComponent = () => {
       setDisabled(!disabled);
     }, 1000);
   };
-  const menuAction = [{ label: 'Enabled', action: enabledAction, disabled: !disabled }, { label: 'Disabled', action: disabledAction, disabled }];
+  const menuAction = [
+    { label: 'Enabled', action: enabledAction, disabled: !disabled },
+    { label: 'Disabled', action: disabledAction, disabled },
+  ];
 
   const editAction = () => {
     // do what you need with the form.id and form.value

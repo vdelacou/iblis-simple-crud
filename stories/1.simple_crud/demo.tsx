@@ -1,6 +1,5 @@
 import { Box, createMuiTheme } from '@material-ui/core';
-import { darken } from '@material-ui/core/styles';
-import ThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { darken, MuiThemeProvider as ThemeProvider } from '@material-ui/core/styles';
 import { FlashOff, FlashOn } from '@material-ui/icons';
 import React, { FunctionComponent, useState } from 'react';
 import { IAddFormValue, IEditFormValue, IMenuAction, ISimpleCrudEntityProps, SimpleCrud } from '../../src';
@@ -76,7 +75,11 @@ export const ReOrder: FunctionComponent = () => {
     name: string;
     index: number;
   }
-  const initData: IReOrder[] = [{ id: 1, name: 'Celestra', index: 2 }, { id: 2, name: 'Cybele', index: 1 }, { id: 3, name: 'Demetrius', index: 3 }];
+  const initData: IReOrder[] = [
+    { id: 1, name: 'Celestra', index: 2 },
+    { id: 2, name: 'Cybele', index: 1 },
+    { id: 3, name: 'Demetrius', index: 3 },
+  ];
 
   const upAction = (id: string | number) => {
     setLoading(true);
@@ -203,7 +206,10 @@ export const OnOff: FunctionComponent = () => {
     active: boolean;
   }
 
-  const initData: IOnOff[] = [{ id: 1, name: 'Celestra', active: true }, { id: 2, name: 'Cybele', active: true }];
+  const initData: IOnOff[] = [
+    { id: 1, name: 'Celestra', active: true },
+    { id: 2, name: 'Cybele', active: true },
+  ];
 
   const toogleAction = (id: string | number) => {
     setLoading(true);
@@ -220,7 +226,10 @@ export const OnOff: FunctionComponent = () => {
   const getEditFormProps = (itemList: IOnOff[]): Array<ISimpleCrudEntityProps<IOnOff>> => {
     return itemList.map(item => {
       if (item.active) {
-        const menuAction: IMenuAction[] = [{ label: 'On', action: toogleAction, disabled: true }, { label: 'Off', action: toogleAction }];
+        const menuAction: IMenuAction[] = [
+          { label: 'On', action: toogleAction, disabled: true },
+          { label: 'Off', action: toogleAction },
+        ];
         return {
           entity: item,
           editFormProps: {
@@ -234,7 +243,10 @@ export const OnOff: FunctionComponent = () => {
           },
         };
       } else {
-        const menuAction: IMenuAction[] = [{ label: 'On', action: toogleAction }, { label: 'Off', action: toogleAction, disabled: true }];
+        const menuAction: IMenuAction[] = [
+          { label: 'On', action: toogleAction },
+          { label: 'Off', action: toogleAction, disabled: true },
+        ];
         return {
           entity: item,
           editFormProps: {
@@ -310,7 +322,10 @@ export const WithTheming: FunctionComponent = () => {
     name: string;
   }
 
-  const initData: IOnOff[] = [{ id: 1, name: 'Celestra' }, { id: 2, name: 'Cybele' }];
+  const initData: IOnOff[] = [
+    { id: 1, name: 'Celestra' },
+    { id: 2, name: 'Cybele' },
+  ];
 
   const validateFunction = (form: IAddFormValue | IEditFormValue) => {
     return form.value && form.value.trim() !== '' ? undefined : 'Required';
